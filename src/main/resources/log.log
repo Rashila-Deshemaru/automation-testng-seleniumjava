@@ -1,0 +1,28 @@
+15:40:03.137 [main] INFO  - website opened
+17:07:47.835 [main] INFO  - Successfully edited
+17:07:49.724 [main] INFO  - Successfully deleted
+17:11:59.568 [main] INFO  - Name field should not be empty
+17:12:01.402 [main] INFO  - Invalid date format for Introduction date
+17:12:03.216 [main] INFO  - Invalid date format for Discontinue date
+17:12:05.069 [main] INFO  - Discontinue date is before Introduction date
+17:12:08.068 [main] INFO  - Successfully added new computer
+17:13:38.536 [main] ERROR - Name field should not be empty
+17:13:40.117 [main] ERROR - Invalid date format for Introduction date
+17:13:41.618 [main] ERROR - Invalid date format for Discontinue date
+17:13:43.106 [main] ERROR - Discontinue date is before Introduction date
+17:13:45.514 [main] INFO  - Successfully added new computer
+17:17:06.252 [main] INFO  - Getting search result
+17:17:06.316 [main] INFO  - Listing Computer Names
+17:17:06.328 [main] INFO  - Listing Computer Names
+17:17:06.340 [main] INFO  - Listing Computer Names
+17:17:55.892 [main] INFO  - Getting search result
+17:17:55.930 [main] INFO  - Listing Computer Names
+17:19:06.165 [main] INFO  - Successfully edited
+17:19:07.415 [main] ERROR - Name field should not be empty
+17:19:09.173 [main] ERROR - Invalid date format for Introduction date
+17:19:11.144 [main] ERROR - Invalid date format for Discontinue date
+17:19:12.931 [main] ERROR - Discontinue date is before Introduction date
+17:19:15.963 [main] INFO  - Successfully added new computer
+17:19:17.811 [main] INFO  - Successfully deleted
+17:19:18.669 [main] INFO  - Getting search result
+17:19:18.705 [main] INFO  - Listing Computer Names

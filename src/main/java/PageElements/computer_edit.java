@@ -4,9 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import utilities.utility;
 
 public class computer_edit {
     WebDriver driver;
+    static utility util = new utility();
 
     private By singlecomp = By.xpath("//a[text()='ACE']");
     private By computername = By.xpath("//input[@id='name']");
@@ -27,14 +29,16 @@ public class computer_edit {
         select.selectByVisibleText("Apple Inc.");
         driver.findElement(this.submitbtn).click();
         String successAlert = driver.findElement(this.alertmsg).getText();
-        System.out.println("Success message: " + successAlert);
+        util.loginfo("Successfully edited");
+        System.out.println(successAlert);
     }
 
     public void deleteComputer(){
         driver.findElement(this.singlecomp).click();
         driver.findElement(this.deletebtn).click();
         String successAlert = driver.findElement(this.alertmsg).getText();
-        System.out.println("Success message: " + successAlert);
+        util.loginfo("Successfully deleted");
+        System.out.println(successAlert);
     }
 
     public computer_edit(WebDriver driver) {

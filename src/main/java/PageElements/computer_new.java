@@ -4,22 +4,23 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-
+import utilities.utility;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class computer_new {
     WebDriver driver;
-
+    static utility util = new utility();
     private By addbtn = By.id("add");
     private By computername = By.xpath("//input[@id='name']");
     private By introdate = By.id("introduced");
     private By discontdate = By.id("discontinued");
     private By companyoptions = By.id("company");
     private By submitbtn = By.xpath("//input[@value='Create this computer']");
-//    private By alertmsg = By.xpath("//div[@class='alert-message warning']");
+    private By alertmsg = By.xpath("//div[@class='alert-message warning']");
 
-    private By errormsg = By.xpath("//span[@class='help-inline']");
+    private By goback = By.xpath("//a[@class='fill' and text()='Computer database']");
+
 
     public void addComputer(String computerName, String introducedDate, String discontinuedDate, String companyName) {
 
@@ -35,22 +36,22 @@ public class computer_new {
 
         // Check for an empty computer name
         if (computerName.isEmpty()) {
-            System.out.println("empty name error");
-            String error = driver.findElement(this.errormsg).getText();
-            System.out.println(error);
+            util.logerror("Name field should not be empty");
+            driver.findElement(this.goback).click();
+            return;
         }
 
         // Check for the correct date format for introducedDate and discontinuedDate
         if (!isValidDateFormat(introducedDate)) {
-            System.out.println("intro date error");
-            String error = driver.findElement(this.errormsg).getText();
-            System.out.println(error);
+            util.logerror("Invalid date format for Introduction date");
+            driver.findElement(this.goback).click();
+            return;
         }
 
         if (!isValidDateFormat(discontinuedDate)) {
-            System.out.println("discontinue date error");
-            String error = driver.findElement(this.errormsg).getText();
-            System.out.println(error);
+            util.logerror("Invalid date format for Discontinue date");
+            driver.findElement(this.goback).click();
+            return;
         }
 
         // Check if discontinuedDate is before introducedDate
@@ -58,15 +59,16 @@ public class computer_new {
         LocalDate discontDate = LocalDate.parse(discontinuedDate, DateTimeFormatter.ISO_LOCAL_DATE);
 
         if (discontDate.isBefore(introDate)) {
-            System.out.println("discontinue date is before intro date");
-            String error = driver.findElement(this.errormsg).getText();
-            System.out.println(error);
+            util.logerror("Discontinue date is before Introduction date");
+            driver.findElement(this.goback).click();
+            return;
         }
 
 
         driver.findElement(this.submitbtn).click();
-//        String successAlert = driver.findElement(this.alertmsg).getText();
-//        System.out.println("Success message: " + successAlert);
+        String successAlert = driver.findElement(this.alertmsg).getText();
+        util.loginfo("Successfully added new computer");
+        System.out.println(successAlert);
     }
 
     public computer_new(WebDriver driver) {

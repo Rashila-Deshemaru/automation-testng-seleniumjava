@@ -13,10 +13,10 @@ public class db_newcomputer {
         driver.manage().window().maximize();
         driver.get("https://computer-database.gatling.io/computers");
         cn.addComputer("", "2020-02-22", "2022-02-11", "Sony");
-//        cn.addComputer("Sony11e", "yyy", "2022-02-11", "Sony");
-//        cn.addComputer("Sony11e", "2022-02-11", "yyy", "Sony");
-//        cn.addComputer("Sony113", "2022-02-22", "2020-02-11", "Sony");
-//        cn.addComputer("mac", "2020-01-11", "2023-01-11", "Apple Inc.");
+        cn.addComputer("Sony11e", "yyy", "2022-02-11", "Sony");
+        cn.addComputer("Sony11e", "2022-02-11", "yyy", "Sony");
+        cn.addComputer("Sony113", "2022-02-22", "2020-02-11", "Sony");
+        cn.addComputer("mac", "2020-01-11", "2023-01-11", "Apple Inc.");
 
     }
 }
